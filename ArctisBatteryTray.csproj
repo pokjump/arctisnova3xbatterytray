@@ -8,9 +8,9 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <AssemblyName>ArctisBatteryTray</AssemblyName>
     <RootNamespace>ArctisBatteryTray</RootNamespace>
-    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationManifest>assets\app.manifest</ApplicationManifest>
     <ApplicationHighDpiMode>PerMonitorV2</ApplicationHighDpiMode>
-    <ApplicationIcon>icon.ico</ApplicationIcon>
+    <ApplicationIcon>assets\icon.ico</ApplicationIcon>
     <Version>1.0.0</Version>
     <Copyright>Copyright © 2026 Filip Urbańczyk</Copyright>
     <Product>ArctisBatteryTray</Product>
