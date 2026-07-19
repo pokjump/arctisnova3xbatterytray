@@ -81,6 +81,22 @@ Output: `bin/Release/net10.0-windows/win-x64/publish/ArctisBatteryTray.exe` -- a
 `EnableCompressionInSingleFile=true`, so this file is automatically compressed (~47 MB, vs.
 ~116 MB uncompressed) -- no extra flag needed.
 
+### Publishing a lightweight .exe (target machine already has .NET 10)
+
+If the target machine already has the **.NET 10 Desktop Runtime** installed, you don't need to
+bundle the runtime at all:
+
+```bash
+dotnet publish -c Release -r win-x64 --self-contained false \
+  -p:PublishSingleFile=true -p:EnableCompressionInSingleFile=false
+```
+
+Output: same path, but only **~450 KB** -- it contains just the app, not the .NET runtime.
+(`EnableCompressionInSingleFile` must be turned off here since compression only applies to
+self-contained publishes.) The target machine needs the
+[.NET 10 Desktop Runtime](https://dotnet.microsoft.com/download/dotnet/10.0) installed, otherwise
+the app won't start.
+
 ## Running
 
 - **Normal use:** double-click `ArctisBatteryTray.exe` -- a tray icon appears. Single instance
