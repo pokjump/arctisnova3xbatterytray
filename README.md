@@ -76,8 +76,10 @@ dotnet publish -c Release -r win-x64 --self-contained \
   -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true
 ```
 
-Output: `bin/Release/net10.0-windows/win-x64/publish/ArctisBatteryTray.exe` (a single file,
-~116 MB -- it bundles the .NET runtime). No .NET installation is required on the target machine.
+Output: `bin/Release/net10.0-windows/win-x64/publish/ArctisBatteryTray.exe` -- a single file, no
+.NET installation required on the target machine. The `.csproj` already sets
+`EnableCompressionInSingleFile=true`, so this file is automatically compressed (~47 MB, vs.
+~116 MB uncompressed) -- no extra flag needed.
 
 ## Running
 
